@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernanda-Calculadora</Fernanda-Calculadora></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="col-3" style="margin-top:15%; margin-left: 45%;">
+        <div style="margin-top: 15px;">
+            <input type="text" class="form-control" style="width: 90%;" id="resul">
+        </div>
+        <div style="margin-top: 15px;"> 
+            <button class="btn btn-secondary" onclick="clikB(1)">1</button>
+            <button class="btn btn-secondary" onclick="clikB(2)">2</button>
+            <button class="btn btn-secondary" onclick="clikB(3)">3</button>
+            <button class="btn btn-secondary" onclick="clikB(4)">4</button>
+            <button class="btn btn-secondary" onclick="clikB(5)">5</button>
+        </div>
+        <div style="margin-top: 15px;">
+            <button class="btn btn-secondary" onclick="clikB(6)">6</button>
+            <button class="btn btn-secondary" onclick="clikB(7)">7</button>
+            <button class="btn btn-secondary" onclick="clikB(8)">8</button>
+            <button class="btn btn-secondary" onclick="clikB(9)">9</button>
+            <button class="btn btn-secondary" onclick="clikB(0)">0</button>
+        </div>
+        <div style="margin-top: 15px;">
+            <button class="btn btn-info" onclick="clearB()">C</button>
+            <button class="btn btn-dark" onclick="sumaB()">+</button>
+            <button class="btn btn-dark" onclick="restaB()">-</button>
+            <button class="btn btn-dark" onclick="multiB()">*</button>
+            <button class="btn btn-dark" onclick="divB()">/</button>
+            <button class="btn btn-dark" onclick="powerB()">°</button>
+        </div>
+        <div style="margin-top: 15px;">
+            <button class="btn btn-dark" onclick="squirtB()">√</button>
+            <button class="btn btn-dark" onclick="cosB()">cos</button>
+            <button class="btn btn-dark" onclick="sinB()">sin</button>
+            <button class="btn btn-dark" onclick="saludar()">🙌</button>
+        </div>
+        <div style="margin-top: 15px;">
+            <button class="btn btn-danger" style="width: 90%;" onclick="igualB()">=</button>
+        </div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+    //$("#resul").val("Hola mundo!!!");
+    var acu= "";
+    var opera="";
+    var alge=0;
+    function igualB(){
+        if(alge==1){
+            sum=parseInt(opera)+parseInt(acu);
+            alge=0;
+            $("#resul").val(sum);
+            acu=sum;
+        }
+        if(alge==2){
+            sum=parseInt(opera)-parseInt(acu);
+            alge=0;
+            $("#resul").val(sum);
+            acu=sum;
+        }
+        if(alge==3){
+            sum=parseInt(opera)*parseInt(acu);
+            alge=0;
+            $("#resul").val(sum);
+            acu=sum;
+        }
+        if(alge==4){
+            sum=parseInt(opera)/parseInt(acu);
+            alge=0;
+            $("#resul").val(sum);
+            acu=sum;
+        }
+        if(alge==5){
+            sum=Math.pow(parseInt(opera),parseInt(acu));
+            alge=0;
+            $("#resul").val(sum);
+            acu=sum;
+        }
+        if(alge==6){
+            sum=Math.sqrt(parseInt(opera),parseInt(acu));
+            alge=0;
+            $("#resul").val(sum);
+            acu=sum;
+        }
+        if(alge==7){
+            sum=Math.cos(parseInt(opera),parseInt(acu));
+            alge=0;
+            $("#resul").val(sum);
+            acu=sum;
+        }
+        if(alge==8){
+            sum=Math.sin(parseInt(opera),parseInt(acu));
+            alge=0;
+            $("#resul").val(sum);
+            acu=sum;
+        }
+    }
+
+    function sumaB(){
+        opera=acu;
+        alge=1;
+        //console.log(opera+" "+alge);
+        clearB();
+        
+    }  
+    function restaB(){
+        opera=acu;
+        alge=2;
+        //console.log(opera+" "+alge);
+        clearB();
+        
+    }   
+    function multiB(){
+        opera=acu;
+        alge=3;
+        //console.log(opera+" "+alge);
+        clearB();
+        
+    }      
+    function divB(){
+        opera=acu;
+        alge=4;
+        //console.log(opera+" "+alge);
+        clearB();
+        
+    }
+    function powerB(){
+        opera=acu;
+        alge=5;
+        //console.log(opera+" "+alge);
+        clearB();
+    }  
+    function squirtB(){
+        opera=acu;
+        alge=6;
+        //console.log(opera+" "+alge);
+        clearB();
+    }      
+    function cosB(){
+        opera=acu;
+        alge=7;
+        //console.log(opera+" "+alge);
+        clearB();
+    } 
+    function sinB(){
+        opera=acu;
+        alge=8;
+        //console.log(opera+" "+alge);
+        clearB();
+    }            
+    function clikB(valor){
+        //alert(valor);
+        acu=acu+valor;
+        $("#resul").val(acu);
+
+    }
+    function clearB(){
+        $("#resul").val("");
+        acu= "";
+    }
+  
+    function saludar(){
+        $("#resul").val("Fernanda Acosta");
+        acu= "";
+    }
+
+
+</script>
+
+</body>
+</html>
